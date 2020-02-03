@@ -1,38 +1,48 @@
 <?php
-@header('X-Pingback: http://pingback.me/aaronpk/xmlrpc');
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+@header('X-Pingback: https://webmention.io/aaronpk/xmlrpc');
+@header('Link: <https://webmention.io/aaronpk/webmention>; rel="webmention"');
+function e($t) { return htmlspecialchars($t); }
+?><!DOCTYPE html>
+<html lang="en">
 <head>
-<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>
-<?php if ($page_title)
-{ 
-	echo $page_title;
-}
-	else
-{
-	echo "OAuth &mdash; An open protocol to allow secure API authorization in a simple and standard method from desktop and web applications.";
-}
-
-?>
-	</title>
-	<link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
-  <link href="/stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />	
-  <link rel="pingback" href="http://pingback.me/aaronpk/xmlrpc" />
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-4617305-25']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><?php echo !empty($page_title) ? $page_title : "OAuth &mdash; An open protocol to allow secure API authorization in a simple and standard method from web, mobile, and desktop applications." ?></title>
+  <link href="/stylesheets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/styles.css" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/carbon.css" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+  <link rel="webmention" href="https://webmention.io/aaronpk/webmention" />
+  <link rel="pingback" href="https://webmention.io/aaronpk/xmlrpc" />
 </head>
+<body>
+
+<?php if($_SERVER['SERVER_NAME'] == 'oauth.net'): ?>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-4617305-25', 'auto');
+ga('send', 'pageview');
+</script>
+<script>
+var trackFooterClick = function(url) {
+   ga('send', 'event', 'footer', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+var trackOutboundClick = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script>
+<?php endif; ?>
+
+<?php require(__DIR__.'/_nav_primary.php'); ?>
+<?php require(__DIR__.'/_new_banner.php'); ?>
+

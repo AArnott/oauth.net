@@ -5,24 +5,16 @@ $page_secondary = "2009.1";
 $page_meta_description = "";
 require('../../includes/_header.php');
 ?>
-<body class="<?php echo $page_section; ?>">
   <div class="container">
-    <div id="header" class="column first last span-20">
-      <h1 id="site-name" class="column first span-5 prepend-1 append-1"><a href="/">OAuth</a></h1>
-      <div id="primary" class="column span-13 last">
 
-<?php require('../../includes/_nav_primary.php'); ?>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/advisories/">Security Advisories</a></li>
+        <li class="breadcrumb-item active">2009.1</li>
+      </ol>
+    </nav>
 
-      </div>
-      <div id="secondary" class="column span-18 append-1 prepend-1 first last">
-        <ul class="navigation">
-          <li><a href="/advisories">Security Advisories</a></li>
-          <li><a class="selected" href="/advisories/2009-1">2009.1</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div id="main" class="column first last span-18 prepend-1 append-1">
+    <div>
 			<h2>OAuth Security Advisory: 2009.1</h2>
 			<p>23-April-2009</p>
 
@@ -58,25 +50,7 @@ require('../../includes/_header.php');
 		
 			<p>There are no reported exploits of this attack.</p>
 		
-			<h3>Vendor Specific Information</h3>
-		
-			<ul>
-				<li><a href="http://blog.cliqset.com/">Cliqset</a></li>
-				<li><a href="http://experience.fellowshipone.com/blogs/intelligentdesign/archive/2009/04/23/fellowship-one-rest-api-oauth-security-update.aspx">Fellowship One</a></li>
-				<li><a href="http://groups.google.com/group/Google-Accounts-API/browse_thread/thread/a2a8a481bbb521b8">Google</a></li>
-				<li><a href="https://ironmoney.com/security/incidents/1/">Iron Money</a></li>
-				<li><a href="http://support.mashery.com/OAuth">Mashery</a></li>
-				<li><a href="http://www.meetup.com/meetup_api/oauth_notice/">Meetup</a></li>
-				<li><a href="http://developer.netflix.com/blog/OAuth">Netflix</a></li>
-				<li><a href="http://groups.google.com/group/api_tripit">TripIt</a></li>
-				<li><a href="http://status.twitter.com">Twitter</a></li>
-				<li><a href="http://developer.yahoo.net/blog/archives/2009/04/oauth_update.html">Yahoo</a></li>
-				<li><a href="https://www.yammer.com/company/yammer_and_oauth">Yammer</a></li>
-			</ul>
-		
-			<h3>More Information</h3>
-		
-			<p>Please contact <a href="mailto:eran@hueniverse.com">Eran Hammer-Lahav</a> for more information about this advisory. A more detailed explanation is available as a <a href="http://www.hueniverse.com/hueniverse/2009/04/explaining-the-oauth-session-fixation-attack.html">blog post</a>.</p>
+    </div>
   </div>
 
 <?php require('../../includes/_footer.php'); ?>
